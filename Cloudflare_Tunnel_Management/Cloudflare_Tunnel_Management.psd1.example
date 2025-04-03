@@ -1,0 +1,32 @@
+@{
+    <#
+        Annotate tunnel endpoint / cloudflare app details here
+    #>
+    Server1    = @{
+        # PC1
+        TunnelName = 'YoMama'
+        Application = 'RDP'
+        Subdomain = 'subdomain1'
+        Domain = 'domain1.com'
+        Url = "rdp://localhost:3310"
+        LocalAddress = 'localhost:3310'
+    }
+    Server2 = @{
+        # PC2
+        TunnelName = 'SoFat'
+        Application = 'RDP'
+        Subdomain = 'subdomain2'
+        Domain = 'domain1.com'
+        Url = "rdp://localhost:3311"
+        LocalAddress = 'localhost:3311'
+    }
+    Server3 = @{
+        # PC3
+        TunnelName = 'WhenSheWalkedInFrontOfTheTVIMissed3Episodes'
+        Application = 'RDP'
+        Subdomain = 'subdomain3'
+        Domain = 'domain2.com'
+        Url = "rdp://localhost:3312"
+        LocalAddress = 'localhost:3312'
+    }
+}
