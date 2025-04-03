@@ -1,4 +1,4 @@
-$config_path = '.\Cloudflare_RDP_Client_Tunnel_Setup_And_Teardown/Cloudflare_RDP_Client_Tunnel_Setup_And_Teardown.psd1'
+$config_path = '.\Cloudflare_Tunnel_Management.psd1'
 if (Test-Path $config_path){
     $config = Import-PowerShellDataFile -Path $config_path
 }
