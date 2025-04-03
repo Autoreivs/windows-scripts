@@ -20,16 +20,17 @@ function Start-CloudflareAccessRDPTunnel {
     }
     $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
     $logPath = "C:\01_Logs\cloudflared\_$TunnelName_$timestamp.log"
-    $cmd = "cloudflared access rdp --hostname $Subdomain.$Domain --url $Url"
+    $cmd = "cloudflared access rdp --hostname $Subdomain.$Domain --url $Url *> `"$logPath`""
 
     Show-Title -Title "$TunnelName Tunnel Running"
     Write-Host "Command Being Run: cloudflared access rdp --hostname $Subdomain.$Domain --url $Url"
     Write-Host "`nInstructions:"
     Write-Host "- Launch Remote Desktop and connect to: $LocalAddress"
     Write-Host "- When finished, close the Cloudflared window to return to the menu.`n"
+    Write-Host "- Note: cloudflared log output can be found at: C:\01_Logs\cloudflared\`n"
 
     Write-Host "Launching tunnel..."
-    $process = Start-Process powershell -ArgumentList "-NoExit", "$cmd *> `"$logPath`"" -PassThru
+    $process = Start-Process powershell -ArgumentList "-NoExit", "-Command", $cmd -WindowStyle Normal -PassThru
 
     # Wait for the cloudflared window to close
     while (-not $process.HasExited) {
