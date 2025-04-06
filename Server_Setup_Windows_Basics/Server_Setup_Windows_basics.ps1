@@ -30,6 +30,7 @@ function  Initialize-FolderStructure {
         "$BasePath",
         "$BasePath\Logs",
         "$BasePath\Configs",
+        "$BasePath\Configs\Cloudflare",
         "$BasePath\Software",
         "$BasePath\Software\Scripts",
         "$BasePath\Backups",
