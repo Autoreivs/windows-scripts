@@ -28,7 +28,7 @@ function  Initialize-FolderStructure {
     
     $folders = @(
         "$BasePath",
-        "$BasePath\Logs",
+        "$BasePath\Backups",
         "$BasePath\Configs",
         "$BasePath\Games",
         "$BasePath\Games\Backups",
@@ -37,10 +37,11 @@ function  Initialize-FolderStructure {
         "$BasePath\Games\Resources",
         "$BasePath\Games\ServerManagers",
         "$BasePath\Games\Tools",
+        "$BasePath\Logs",
+        "$BasePath\Notes",
         "$BasePath\Software",
         "$BasePath\Software\Scripts",
-        "$BasePath\Backups",
-        "$BasePath\Notes"
+        "$BasePath\Wallpaper"
     )
 
     foreach ($folder in $folders) {
