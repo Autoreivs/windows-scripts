@@ -40,6 +40,7 @@ function  Initialize-FolderStructure {
         "$BasePath\Logs",
         "$BasePath\Notes",
         "$BasePath\Software",
+        "$BasePath\Software\Default_Programs",
         "$BasePath\Software\Scripts",
         "$BasePath\Wallpaper"
     )
