@@ -40,7 +40,7 @@ function  Initialize-FolderStructure {
         "$BasePath\Logs",
         "$BasePath\Notes",
         "$BasePath\Software",
-        "$BasePath\Software\Default_Programs",
+        "$BasePath\Software\DefaultPrograms",
         "$BasePath\Software\Scripts",
         "$BasePath\Wallpaper"
     )
@@ -55,9 +55,18 @@ function  Initialize-FolderStructure {
     }
 }
 
+function Create-AdminAccount {
+    $Username = Read-Host "Eneter username for new admin account"
+    $Password = Read-Host "Enter password for new admin account" -AsSecureString
+
+    New-LocalUser -Name $Username -Password $Password -FullName "Server Admin" -Description "Privileged admin account"
+    Add-LocalGroupMember -Group "Administrators" -Member $Username
+}
+
 function Initialize-BaseSetup {
     Rename-PC
     Initialize-FolderStructure
+    Create-AdminAccount
 }
 
 Initialize-BaseSetup
